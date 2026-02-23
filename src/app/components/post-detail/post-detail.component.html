@@ -1,0 +1,64 @@
+@if (post(); as p) {
+  <section class="post-detail-section">
+    <div class="container py-5">
+      <a routerLink="/blog" class="back-link text-decoration-none d-inline-flex align-items-center gap-2 mb-4">
+        <i class="fa-solid fa-arrow-right"></i>
+        <span>العودة للمدونة</span>
+      </a>
+      <article class="post-detail-card">
+        <div class="post-detail-header">
+          <span class="category-badge">{{ p.category }}</span>
+          <h1 class="post-detail-title">{{ p.title }}</h1>
+          <div class="post-meta d-flex flex-wrap align-items-center gap-3">
+            <div class="author-info d-flex align-items-center gap-3">
+              <img [src]="p.author.avatar" [alt]="p.author.name" class="author-avatar" />
+              <div>
+                <span class="author-name">{{ p.author.name }}</span>
+                <span class="author-role">{{ p.author.role }}</span>
+              </div>
+            </div>
+            <span class="post-date">{{ p.date }}</span>
+            <span class="read-time">{{ p.readTime }}</span>
+          </div>
+        </div>
+        <div class="post-detail-image">
+          <img [src]="p.image" [alt]="p.title" />
+        </div>
+        <div class="post-detail-content">
+          <p class="lead">{{ p.excerpt }}</p>
+          <div class="content-body" [innerHTML]="getFormattedContent(p.content)"></div>
+          @if (p.tags && p.tags.length) {
+            <div class="post-tags mt-4">
+              @for (tag of p.tags; track tag) {
+                <span class="tag-badge">{{ tag }}</span>
+              }
+            </div>
+          }
+        </div>
+      </article>
+      @if (relatedPosts().length > 0) {
+        <div class="related-posts mt-5">
+          <h3 class="related-title mb-4">مقالات ذات صلة</h3>
+          <div class="row g-4">
+            @for (rel of relatedPosts(); track rel.id) {
+              <div class="col-md-4">
+                <a [routerLink]="['/blog', rel.slug]" class="related-card text-decoration-none">
+                  <img [src]="rel.image" [alt]="rel.title" class="related-img" />
+                  <span class="related-cat">{{ rel.category }}</span>
+                  <h4 class="related-post-title">{{ rel.title }}</h4>
+                </a>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+} @else if (notFound()) {
+  <section class="post-detail-section">
+    <div class="container py-5 text-center">
+      <h2 class="text-white mb-3">المقال غير موجود</h2>
+      <a routerLink="/blog" class="btn btn-primary">العودة للمدونة</a>
+    </div>
+  </section>
+}

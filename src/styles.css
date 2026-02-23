@@ -1,0 +1,36 @@
+/* Custom CSS Variables - عدسة Adasa */
+:root {
+  --adasa-primary: #f97316;
+  --adasa-primary-dark: #ea580c;
+  --adasa-bg: #0a0a0a;
+  --adasa-card: #161616;
+  --adasa-border: #262626;
+  --adasa-text: #fff;
+  --adasa-muted: #a1a1a1;
+  --adasa-muted-dark: #737373;
+}
+
+* {
+  font-family: "Tajawal", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--adasa-bg);
+  color: var(--adasa-text);
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Bootstrap overrides for dark theme */
+.btn-primary {
+  background: linear-gradient(135deg, var(--adasa-primary), var(--adasa-primary-dark));
+  border: none;
+}

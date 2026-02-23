@@ -1,0 +1,43 @@
+@if (isOpen()) {
+  <div class="search-overlay" (click)="close()">
+    <div class="search-modal" (click)="$event.stopPropagation()">
+      <div class="search-header">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="ابحث في المقالات..."
+          [value]="query()"
+          (input)="query.set($any($event.target).value)"
+          autofocus
+        />
+        <button type="button" class="search-close" (click)="close()" aria-label="إغلاق">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-results">
+        @if (query().trim()) {
+          @if (filteredPosts().length > 0) {
+            @for (post of filteredPosts(); track post.id) {
+              <button
+                type="button"
+                class="search-result-item"
+                (click)="selectPost(post.slug)"
+              >
+                <img [src]="post.image" [alt]="post.title" class="search-result-img" />
+                <div class="search-result-content">
+                  <span class="search-result-cat">{{ post.category }}</span>
+                  <h4 class="search-result-title">{{ post.title }}</h4>
+                </div>
+              </button>
+            }
+          } @else {
+            <p class="search-no-results">لا توجد نتائج لـ "{{ query() }}"</p>
+          }
+        } @else {
+          <p class="search-hint">ابدأ الكتابة للبحث في المقالات</p>
+        }
+      </div>
+    </div>
+  </div>
+}

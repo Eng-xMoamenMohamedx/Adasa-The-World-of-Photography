@@ -1,0 +1,50 @@
+@if (siteInfo(); as info) {
+  <footer class="footer">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a routerLink="/" class="footer-brand d-flex align-items-center gap-2 text-decoration-none mb-3">
+            <span class="footer-brand-name">{{ info.name }}</span>
+          </a>
+          <p class="footer-tagline">{{ info.tagline }}</p>
+          <p class="footer-desc">{{ info.description }}</p>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4 class="footer-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a routerLink="/">الرئيسية</a></li>
+            <li><a routerLink="/blog">المدونة</a></li>
+            <li><a routerLink="/about">من نحن</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <h4 class="footer-title">تواصل معنا</h4>
+          @if (info.email) {
+            <a [href]="'mailto:' + info.email" class="footer-email">{{ info.email }}</a>
+          }
+        </div>
+        <div class="col-12 col-md-4 col-lg-4">
+          <h4 class="footer-title">تابعنا</h4>
+          @if (socialEntries.length) {
+            <div class="footer-social">
+              @for (entry of socialEntries; track entry[0]) {
+                <a [href]="entry[1]" target="_blank" rel="noopener noreferrer" class="social-icon" [attr.aria-label]="entry[0]">
+                  @switch (entry[0]) {
+                    @case ('twitter') { <i class="fa-brands fa-x-twitter"></i> }
+                    @case ('github') { <i class="fa-brands fa-github"></i> }
+                    @case ('linkedin') { <i class="fa-brands fa-linkedin-in"></i> }
+                    @case ('youtube') { <i class="fa-brands fa-youtube"></i> }
+                    @default { <i class="fa-solid fa-link"></i> }
+                  }
+                </a>
+              }
+            </div>
+          }
+        </div>
+      </div>
+      <div class="footer-bottom mt-5 pt-4">
+        <p class="mb-0">© {{ currentYear }} {{ info.name }}. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+}

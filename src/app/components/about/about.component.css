@@ -1,0 +1,422 @@
+/* ===== Hero Section ===== */
+.about-hero {
+  position: relative;
+  background-color: #0a0a0a;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #0a0a0a;
+}
+
+.about-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 60px 60px;
+  background-image: linear-gradient(rgba(38, 38, 38, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 38, 38, 0.5) 1px, transparent 1px);
+  opacity: 1;
+}
+
+.about-hero-blur {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.about-hero-blur-1 {
+  top: 80px;
+  left: 80px;
+  width: 288px;
+  height: 288px;
+  background-color: rgba(249, 115, 22, 0.2);
+  filter: blur(100px);
+}
+
+.about-hero-blur-2 {
+  bottom: 80px;
+  right: 80px;
+  width: 384px;
+  height: 384px;
+  background-color: rgba(251, 191, 36, 0.1);
+  filter: blur(120px);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.section-label {
+  padding: 8px 16px;
+  background-color: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 38px;
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.spot-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f97316;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.about-hero-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-hero-desc {
+  font-size: 1.25rem;
+  color: #a1a1a1;
+  line-height: 1.75;
+  max-width: 48rem;
+}
+
+.about-stats-row {
+  max-width: 56rem;
+}
+
+.glass-card {
+  padding: 24px;
+  background-color: rgba(22, 22, 22, 0.8);
+  border: 1px solid #262626;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.glass-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.glass-icon {
+  font-size: 1.5rem;
+  color: #f97316;
+  display: block;
+}
+
+.glass-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-label {
+  font-size: 14px;
+  color: #737373;
+}
+
+/* ===== Values Section ===== */
+.about-values {
+  background-color: #111111;
+  border-top: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+}
+
+.about-values-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.values-bar {
+  width: 6px;
+  height: 32px;
+  background: linear-gradient(to bottom, #f97316, #fbbf24);
+  border-radius: 4px;
+}
+
+.values-bar-reverse {
+  background: linear-gradient(to bottom, #fbbf24, #f97316);
+}
+
+.about-values-desc {
+  font-size: 1.125rem;
+  color: #a1a1a1;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.value-card {
+  position: relative;
+  padding: 24px;
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.value-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.value-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.value-card:hover .value-card-gradient {
+  opacity: 0.1;
+}
+
+.value-icon {
+  font-size: 2.25rem;
+  color: #f97316;
+  display: block;
+}
+
+.value-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.value-card:hover .value-title {
+  color: #f97316;
+}
+
+.value-desc {
+  font-size: 14px;
+  color: #a1a1a1;
+  margin: 0;
+}
+
+/* ===== Team Section ===== */
+.about-team {
+  background-color: #0a0a0a;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.section-label {
+  padding: 8px 16px;
+  background-color: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  border-radius: 38px;
+  color: #f97316;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.about-team-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.about-team-desc {
+  font-size: 1.125rem;
+  color: #a1a1a1;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.team-card {
+  padding: 24px;
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.team-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.team-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #262626;
+  transition: border-color 0.3s;
+}
+
+.team-card:hover .team-avatar {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.team-avatar-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  background-color: #f97316;
+  border: 2px solid #161616;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-avatar-badge i {
+  font-size: 10px;
+  color: #fff;
+}
+
+.team-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f97316;
+  margin-bottom: 16px;
+}
+
+.team-social-link {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #262626;
+  border-radius: 8px;
+  color: #737373;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.team-social-link:hover {
+  background-color: #f97316;
+  color: #fff;
+}
+
+/* ===== CTA Section ===== */
+.about-cta-section {
+  position: relative;
+  background: linear-gradient(135deg, #ea580c, #f97316, #fbbf24);
+  overflow: hidden;
+}
+
+.about-cta-blur {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0.3;
+}
+
+.about-cta-blur-1 {
+  top: 40px;
+  right: 40px;
+  width: 256px;
+  height: 256px;
+  filter: blur(100px);
+}
+
+.about-cta-blur-2 {
+  bottom: 40px;
+  left: 40px;
+  width: 192px;
+  height: 192px;
+  filter: blur(80px);
+}
+
+.about-cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.about-cta-desc {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.about-cta-btn {
+  padding: 16px 32px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.about-cta-btn-dark {
+  background-color: #0a0a0a;
+  color: #fff;
+  border: none;
+}
+
+.about-cta-btn-dark:hover {
+  background-color: #171717;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.about-cta-btn-outline {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.about-cta-btn-outline:hover {
+  background-color: #fff;
+  color: #0a0a0a;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .about-hero-title {
+    font-size: 3rem;
+  }
+
+  .about-values-title {
+    font-size: 2.25rem;
+  }
+
+  .about-team-title {
+    font-size: 2.25rem;
+  }
+
+  .about-cta-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .about-hero-title {
+    font-size: 3.75rem;
+  }
+}

@@ -1,0 +1,45 @@
+<section class="categories-section">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="text-center mb-5">
+            <div class="d-inline-flex  align-items-center gap-2 cat-label ">
+              <span class="spot-2"></span>
+              <span class="spot"></span>
+              <span class="text-white cat-statue">التصنيفات</span>
+            </div>
+            <h2 class="cat-title">استكشف حسب الموضوع</h2>
+            <p class="cat-pa">اعثر على محتوى مصمم حسب اهتماماتك</p>
+          </div>
+
+        </div>
+        @if (categories().length > 0) {
+        <div class="row g-4 g-md-6">
+          @for (cat of categories(); track cat.name; let i = $index) {
+          <div class="col-6 col-md-3">
+            <a [routerLink]="['/blog']" [queryParams]="{category: cat.name}" 
+               class="category-card text-decoration-none" 
+               [style.animation-delay]="(i * 100) + 'ms'">
+              <div class="category-gradient"></div>
+              <div class="category-content position-relative">
+                <div class="category-icon-wrapper">
+                  <i [class]="getCategoryIcon(cat.name)" class="category-icon"></i>
+                </div>
+                <h3 class="category-name">{{ cat.name }}</h3>
+                <p class="category-count">{{ cat.count }} مقالة</p>
+                <div class="category-arrow">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

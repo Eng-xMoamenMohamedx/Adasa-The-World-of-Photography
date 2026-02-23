@@ -1,0 +1,92 @@
+.footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #262626;
+  margin-top: auto;
+}
+
+.footer-brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  color: #a1a1a1;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.footer-desc {
+  color: #737373;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #a1a1a1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f97316;
+}
+
+.footer-email {
+  color: #a1a1a1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-email:hover {
+  color: #f97316;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #262626;
+  border-radius: 12px;
+  color: #a1a1a1;
+  font-size: 1.125rem;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #f97316;
+}
+
+.footer-bottom {
+  border-top: 1px solid #262626;
+  color: #737373;
+  font-size: 0.875rem;
+}

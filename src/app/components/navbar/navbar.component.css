@@ -1,0 +1,187 @@
+.nav-p {
+    padding: 8px 32px !important;
+}
+
+.bg-nav {
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+    z-index: 99999;
+    backdrop-filter: blur(25px) !important;
+    background-color: #0f0f0ff5 !important;
+}
+
+
+li a {
+    color: #a1a1a1;
+    padding: 10px 20px !important;
+    border-radius: 30px !important;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s all;
+}
+
+li a:hover {
+    color: white !important;
+}
+
+.navbar-nav {
+    border: 1px solid #373636;
+    border-radius: 30px;
+    padding: 6px;
+}
+
+.magn-st {
+    display: flex;
+    align-items: center;
+    width: 45.6px;
+    height: 45.6px;
+    padding: 12px;
+    transition: 0.5s all;
+    border-radius: 12px;
+}
+
+.magn-st:hover {
+    border: 1px solid #373636;
+
+    i {
+        color: #EF610F !important;
+    }
+}
+
+.readbtn-st {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgb(249, 115, 22), rgb(234, 88, 12));
+    ;
+    transition: 0.2s ease-out;
+}
+
+.readbtn-st:hover {
+    transform: translateY(-2px);
+}
+
+.content-1 {
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(to right, #fff, #d4d4d4);
+    background-clip: text;
+    color: transparent;
+}
+
+.content-2 {
+    font-size: 12px;
+    color: #ff8b1acc;
+}
+
+.logo-img img {
+    width: 48px;
+    transition: 0.3s ease-in-out;
+}
+
+.logo-img img:hover {
+    transform: scale(1.06);
+}
+
+.active {
+    color: white !important;
+    background: linear-gradient(to right, #ff6900, #f54a00) !important;
+}
+
+.navbar-toggler-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a1a1a1 !important;
+    width: 24px !important;
+    height: 24px !important;
+    background-image: none;
+
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    
+}
+
+.navbar-toggler{
+    transition: 0.5s all;
+}
+
+.navbar-toggler:hover{
+    border: 1px solid #373636 !important;
+}
+
+
+
+@media (min-width: 768px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+
+
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+
+
+
+
+}
+
+
+@media (max-width: 768px) {
+
+    .magn-st {
+        display: none;
+    }
+
+    .navbar-nav {
+        border: none;
+
+    }
+
+    li a {
+        padding: 12px 16px !important;
+        border-radius: 12px !important;
+        margin-bottom: 4px;
+    }
+
+    .readbtn-st {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-collapse {
+        border: 1px solid #262626;
+        border-radius: 16px;
+        padding: 12px 16px;
+        margin-top: 12px;
+        background-color: #222222b9 !important;
+    }
+
+    .active {
+        color: #ff6900 !important;
+        background: none !important;
+        border: 1px solid #fe6e004d !important;
+        background-color: #fe6e001a !important;
+    }
+
+
+
+}
+
+@media (max-width: 640px) {
+    .content-2 {
+        display: none;
+    }
+}

@@ -1,0 +1,141 @@
+@if (siteInfo(); as info) {
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="about-hero-bg"></div>
+    <div class="about-hero-grid"></div>
+    <div class="about-hero-blur about-hero-blur-1"></div>
+    <div class="about-hero-blur about-hero-blur-2"></div>
+    <div class="container position-relative">
+      <div class="about-hero-content text-center py-5">
+        <span class="section-label d-inline-flex align-items-center gap-2 mb-3">
+          <span class="spot-dot"></span>
+          من نحن
+        </span>
+        <h1 class="about-hero-title mb-4">مهمتنا هي <span class="gradient-text">الإعلام والإلهام</span></h1>
+        <p class="about-hero-desc mx-auto mb-5">
+          مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير مهاراتكم. نحن شغوفون بمشاركة المعرفة ومساعدة المصورين على تنمية مهاراتهم من خلال محتوى عالي الجودة.
+        </p>
+        <div class="row g-4 justify-content-center about-stats-row m-auto">
+          <div class="col-6 col-md-3">
+            <div class="glass-card">
+              <i class="fa-solid fa-users glass-icon mb-2"></i>
+              <div class="glass-value mb-1">{{ stats().readers }}</div>
+              <div class="glass-label">قارئ شهرياً</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="glass-card">
+              <i class="fa-solid fa-newspaper glass-icon mb-2"></i>
+              <div class="glass-value mb-1">{{ stats().posts }}</div>
+              <div class="glass-label">مقالة منشورة</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="glass-card">
+              <i class="fa-solid fa-pen-nib glass-icon mb-2"></i>
+              <div class="glass-value mb-1">{{ stats().authors }}</div>
+              <div class="glass-label">كاتب خبير</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="glass-card">
+              <i class="fa-solid fa-book-open glass-icon mb-2"></i>
+              <div class="glass-value mb-1">{{ stats().categories }}</div>
+              <div class="glass-label">تصنيف</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="about-values">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="about-values-title d-flex align-items-center justify-content-center gap-3 mb-4">
+          <span class="values-bar"></span>
+          قيمنا
+          <span class="values-bar values-bar-reverse"></span>
+        </h2>
+        <p class="about-values-desc">المبادئ التي توجه كل ما نقوم بإنشائه</p>
+      </div>
+      <div class="row g-4">
+        @for (v of values; track v.title) {
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="value-card">
+              <div class="value-card-gradient"></div>
+              <div class="value-card-content position-relative text-center">
+                <i [class]="v.icon" class="value-icon mb-3"></i>
+                <h3 class="value-title mb-2">{{ v.title }}</h3>
+                <p class="value-desc">{{ v.desc }}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="about-team">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span class="section-label mb-3 d-block">فريقنا</span>
+        <h2 class="about-team-title mb-4">تعرف على كتابنا</h2>
+        <p class="about-team-desc">فريقنا من المصورين والكتاب ذوي الخبرة شغوفون بمشاركة معرفتهم مع المجتمع.</p>
+      </div>
+      <div class="row g-4">
+        @for (author of authors(); track author.name) {
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="team-card">
+              <div class="team-avatar-wrapper position-relative d-inline-block mb-3">
+                <img [src]="author.avatar" [alt]="author.name" class="team-avatar" />
+                <span class="team-avatar-badge">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+              </div>
+              <h3 class="team-name">{{ author.name }}</h3>
+              <p class="team-role">{{ author.role }}</p>
+              @if (socialEntries.length) {
+                <div class="team-social d-flex justify-content-center gap-2">
+                  @for (entry of socialEntries; track entry[0]) {
+                    <a [href]="entry[1]" target="_blank" rel="noopener noreferrer" class="team-social-link" [attr.aria-label]="entry[0]">
+                      @switch (entry[0]) {
+                        @case ('twitter') { <i class="fa-brands fa-x-twitter"></i> }
+                        @case ('github') { <i class="fa-brands fa-github"></i> }
+                        @case ('linkedin') { <i class="fa-brands fa-linkedin-in"></i> }
+                        @default { <i class="fa-solid fa-link"></i> }
+                      }
+                    </a>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="about-cta-section">
+    <div class="about-cta-blur about-cta-blur-1"></div>
+    <div class="about-cta-blur about-cta-blur-2"></div>
+    <div class="container position-relative py-5">
+      <div class="text-center">
+        <h2 class="about-cta-title mb-4">لديك أسئلة؟ دعنا نتحدث!</h2>
+        <p class="about-cta-desc mb-5">نحب أن نسمع منك. سواء كان لديك سؤال حول محتوانا، أو تريد المساهمة، أو تريد فقط إلقاء التحية، لا تتردد في التواصل.</p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <a [href]="'mailto:' + info.email" class="about-cta-btn about-cta-btn-dark d-inline-flex align-items-center justify-content-center gap-2">
+            <i class="fa-solid fa-envelope"></i>
+            تواصل معنا
+          </a>
+          <a routerLink="/blog" class="about-cta-btn about-cta-btn-outline d-inline-flex align-items-center justify-content-center gap-2">
+            تصفح المقالات
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+}

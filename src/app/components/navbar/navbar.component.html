@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-nav">
+    <div class="container-fluid container-lg p-0 nav-p">
+       
+            <a class="d-flex align-items-center text-decoration-none gap-2" routerLink="/">
+                <div class="logo-img">
+                    <img  src="/images/logo-GdqARQRt.png" alt="">
+                </div>
+
+                <div class="d-flex align-items-start flex-column">
+                    <span class="content-1">عدسة</span>
+                    <span class="content-2 ">عالم التصوير الفوتوغرافي</span>
+                </div>
+            </a>
+            <button (click)="onChangeIcon()" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa-solid" [ngClass]="isOpen ?  'fa-bars'  :  'fa-x' "></i></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto  mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="">الرئيسية</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="blog">المدونة</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="about">من نحن</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn magn-st" type="button" (click)="openSearch()" aria-label="بحث"><i style="color: #737373;"
+                        class="fa-solid fa-magnifying-glass"></i></button>
+                <a class="text-decoration-none text-white readbtn-st" routerLink="blog">ابدأ القراءة</a>
+            </div>
+        </div>
+    </div>
+</nav>
