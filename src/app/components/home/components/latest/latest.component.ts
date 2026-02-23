@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { DataService, Post } from '../../../../services/data.service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-latest',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './latest.component.html',
   styleUrl: './latest.component.css',
 })
